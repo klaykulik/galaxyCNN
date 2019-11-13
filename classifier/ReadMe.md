@@ -11,3 +11,4 @@ ToDo
 1. Currently all the data would be augmented, we only need to augment the classes with less data
 2. Find more data for testing or split the current data to train+vali and test
 3. Try more models, optimizers and loss functions.
+4. Use cross validation (Maybe)
