@@ -1,0 +1,210 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% PACKAGES.
+%\usepackage[toc,page]{appendix}
+%\usepackage{multirow}
+%% \input{plots/latex_plot/macros_plots.tex}
+%\newtheorem{Definition}{Definition}
+%\newenvironment{definition}[1][Definition]{\begin{trivlist}
+%\newcommand{\listappendixname}{List of Appendices}
+%\newcommand{\myappendices}[1]{%
+%\addcontentsline{app}{myappendices}{#1}\par}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%\usepackage{multicol}
+\usepackage{paralist}
+%% plots, diagrams
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{comment}
+%%\input{settings-ACM}
+%%\usepackage{amsfonts,latexsym}
+%%\usepackage{amsthm}
+%%\usepackage{amsmath}
+%%\usepackage{amssymb}
+%%\usepackage[utf8]{inputenc}
+%%\usepackage{caption}
+%%\usepackage{verbatim}
+%%\usepackage{resizegather}
+%%\usepackage{appendix}
+\usepackage{graphicx,pifont,color}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{hhline}
+%\usepackage{cleveref}
+%\usepackage{lhelp}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{fancyvrb}
+%\usepackage{lipsum}
+%\usepackage{pstricks,pst-node,pst-grad,pst-plot}
+\usepackage{multirow}
+%\usepackage[final]{pdfpages}
+%\usepackage{subcaption}
+
+%%page specific style
+%\usepackage{afterpage}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usetikzlibrary{positioning,calc}
+\usetikzlibrary{arrows.meta,chains,decorations.pathreplacing,scopes,positioning}
+\usetikzlibrary{calc,shapes.multipart,chains,arrows}
+\usepackage{lhelp}
+\usepackage{listings}
+%\usepackage{float}
+\usepackage{xcolor,colortbl}
+\usepackage{tcolorbox}
+
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{esvect}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{notation}{Notation}
+\newtheorem{example}{Example}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{observation}{Observation}
+\newtheorem{remark}{Remark}
+\newtheorem{consequence}{Consequence}
+\newtheorem{heuristic}{Heuristic}
+\newenvironment{Proof}{ {\noindent} {\sc Proof} $\rhd$}{$\lhd$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% MATH SYMBOLS.
+\def\N{\mbox{${\mathbb N}$}}
+\def\Q{\mbox{${\mathbb Q}$}}
+\def\R{\mbox{${\mathbb R}$}}
+\def\Z{\mbox{${\mathbb Z}$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% TOOLS AND ALGORITHMS.
+\newcommand{\cupti}{\mbox{\sc CUPTI}}
+\def\cuda{\mbox{\sc CUDA}}
+\newcommand{\MWP}{\mbox{${\rm MWP}$}}
+\newcommand{\CWP}{\mbox{${\rm CWP}$}}
+\def\mwpcwp{\mbox{MWP-CWP}}
+\newcommand{\nvcc}{\mbox{\sc nvcc}}
+\newcommand{\nvprof}{\mbox{\sc nvprof}}
+\newcommand{\dimThree}{\mbox{\texttt{dim3}}}
+
+\def\cilk{\mbox{\sc Cilk}}
+\def\cilkview{\mbox{\sc Cilkview}}
+\def\cilkplus{\mbox{\sc CilkPlus}}
+\def\openmp{\mbox{\sc OpenMP}}
+\def\openmpc{\mbox{\sc OpenMPC}}
+\def\openmptasks{\mbox{\sc OpenMP Tasks}}
+\def\tbb{\mbox{\sc TBB}}
+\def\meta{\mbox{\sc Meta\-Fork}}
+
+%\def\opencl{\mbox{\sc OpenCL}}
+\def\openacc{\mbox{\sc OpenACC}}
+\def\ppcg{\mbox{\sc PPCG}}
+\renewcommand{\P}{\mbox{\sf P}}
+\newcommand{\MMM}{MCM}
+\newcommand{\K}{\mbox{\sf K}}
+%\newcommand{\blockcomment}[1]{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% PROOFREADING UTILS.
+
+\newcommand{\hidetext}[1]{\mbox{ \ }}
+\newcommand{\todo}[2]{{{\textcolor{red}{ #1}}}\footnote{ {\textcolor{blue}{ #2}} }}
+\newcommand{\fixed}[2]{#1}
+\newcommand{\reworked}[1]{{{\textcolor{orange}{ #1}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% COLORS
+\definecolor{wp}{rgb}{0.129,0.478, 0.678}
+%\definecolor{wp}{rgb}{0.26,0.55, 0.79}
+%\definecolor{wpbright}{rgb}{0.192, 0.439, 0.561}\\
+%\definecolor{wpbright}{rgb}{0.43, 0.43, 0.43}
+%\definecolor{wp}{rgb}{0.19, 0.45, 0.66}
+\definecolor{wpbright}{rgb}{0.26,0.55, 0.79}
+\definecolor{yellowBright}{HTML}{FFD247}
+\definecolor{orangeBright}{HTML}{FF7E47}
+\definecolor{gray1}{HTML}{CEDBE1}
+\definecolor{gray2}{HTML}{DDE6EA}
+\definecolor{gray3}{HTML}{E3E6EB}
+\definecolor{darkblue1}{HTML}{2375B9}%{0A599B}
+\definecolor{darkblue2}{HTML}{3D577A}
+\definecolor{lightblue1}{HTML}{65A4D9}
+\definecolor{lightblue2}{HTML}{94C3E9}
+\definecolor{red1}{HTML}{E4001B}
+\definecolor{red2}{HTML}{8F2831}
+\definecolor{lime1}{HTML}{AEBD63}
+\definecolor{navy}{HTML}{000063}
+\definecolor{purple1}{HTML}{8F2831}
+\definecolor{contrast}{HTML}{CE0000}
+\definecolor{positive}{HTML}{0D900F}
+\definecolor{negative}{HTML}{FF0000}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% COMMENTED
+%%\newcommand{\blockcomment}[1]{}
+%%\newtheorem{corollary}{Corollary}
+%%\newtheorem{theorem}{Theorem}
+%%\newtheorem{lemma}{Lemma}
+%%\newtheorem{problem}{Problem}
+%%\newtheorem{definition}{Definition}
+%%\newtheorem{proposition}{Proposition}
+%%\newtheorem{notation}{Notation}
+%%\newtheorem{example}{Example}
+%%\newtheorem{hypothesis}{Hypothesis}
+%%\newtheorem{observation}{Observation}
+%%\newtheorem{remark}{Remark}
+%%\newtheorem{consequence}{Consequence}
+%%\newenvironment{Proof}{ {\noindent} {\sc Proof} $\rhd$}{$\lhd$}
+%\newcommand{\hidetext}[1]{\mbox{ \ }}
+%\newcommand{\todo}[2]{{{\textcolor{red}{ #1}}}\footnote{ {\textcolor{blue}{ #2}} }}
+%\newcommand{\fixed}[2]{#1}
+%\newcommand{\reworked}[1]{{{\textcolor{orange}{ #1}}}}
+
+%%\lstset { %
+%%	language=C,
+%%	backgroundcolor=\color{black!5}, % set backgroundcolor
+%%	basicstyle=\footnotesize,% basic font setting
+%%	belowcaptionskip=1\baselineskip,
+%%	breaklines=true,
+%%	frame=L,
+%%	xleftmargin=\parindent,
+%%	showstringspaces=false,
+%%	basicstyle=\footnotesize\ttfamily,
+%%	keywordstyle=\bfseries\color{green!40!black},
+%%	commentstyle=\itshape\color{purple!40!black},
+%%	identifierstyle=\color{blue},
+%%	stringstyle=\color{orange},
+%%	numbers=left,
+%%	stepnumber=1,
+%%}
+%%%
+%%\usepackage{booktabs}
+%%%
+%%\setlength{\aboverulesep}{0pt}
+%%\setlength{\belowrulesep}{0pt}
+
+%
+%\newcolumntype{a}{>{\columncolor{gray1}}c}
+
+
+
+
+%%%%%%%%%
+% Macros for proofreading
+%%%%%%%%%
+\newcommand{\toremove}[1]{\textcolor{red}{#1}}
+\newcommand{\removed}[1]{}

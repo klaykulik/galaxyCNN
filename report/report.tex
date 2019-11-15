@@ -1,0 +1,60 @@
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage[margin=0.75in]{geometry}
+
+% defining the \BibTeX command - from Oren Patashnik's original BibTeX documentation.
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08emT\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\input{macros}
+
+
+\makeatletter
+\DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
+\makeatother
+
+\makeatletter
+\def\endthebibliography{%
+	\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist
+}
+\makeatother
+
+
+
+%\title{A Technique for Finding Optimal Program Launch Parameters Tageting
+%Manycore Accelerators\\
+\title{
+Data science project\\}
+
+
+\author{
+\IEEEauthorblockN{A\IEEEauthorrefmark{1},
+B\IEEEauthorrefmark{1} and
+Linxiao Wang\IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Computer Science, University of Western Ontario, London, Canada}
+Email: a@uwo.ca, b@uwo.ca, lwang739@uwo.ca
+}
+
+%reducing spacing after float
+\setlength\textfloatsep\baselineskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}Data science\end{IEEEkeywords}
+
+\input{introduction} 
+\input{data}
+\input{method}
+\input{results}
+\input{discussion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+
+\end{document}
