@@ -1,5 +1,34 @@
 \section{Data}
 \label{sec:data}
-Describe in detail the data you are using.
+\subsection{Data Source}
+The data we used for this project come from the Sloan Sloan Digital Sky Survey (SDSS) Data Release (DR)7~\cite{abazajian2009seventh} and the Galaxy Zoo (GZ) project first data release~\cite{lintott2010galaxy}. SDSS is a major multi-spectral imaging and spectroscopic redshift survey using a dedicated wide-field 2.5 m telescope located at Apache Point Observatory (APO) near Sacramento Peak in Southern New Mexico.
+DR7 contains five-band photometry for 357 million distinct objects~\cite{abazajian2009seventh}. The GZ project collected simple morphological classifications of nearly 900,000 galaxies drawn from SDSS DR7, contributed by hundreds of thousands of volunteers~\cite{lintott2010galaxy}. 
+We used the galaxy photometry data from SDSS and the classification labels from GZ. 
 
-Data~\cite{baillard2011efigi}
+\subsection{Pre-processing}
+Since the classifications in GZ are from volunteer votes, we only used the data entries that
+have high confidence classifications, that is, we choose galaxies with debiased probability (given in~\cite{lintott2010galaxy}) greater than 0.985 for spiral galaxies, and 0.926 for elliptical galaxies, respectively. We choose these thresholds to ensure that: (i) the galaxies used for training the neural network have highly accurate classifications; and (ii) the number of data for both classes in the training and test sets are balanced~\cite{khan2019deep}. 
+
+The data we got from SDSS are in Flexible Image Transport System (FITS) format. For each galaxy five FITS files are provided by SDSS, one for each band (u, g, r, i and z). Each FITS file contains a header part and a data part. We removed the header part and resized the images to $200 \times 200$ pixels. As we discussed in Section~\ref{sec:intro}, 'ugriz' covers a broader band than RGB images. Common ways to map 'ugriz' files to RGB images would take 3 or 4 channels (out of 5) of 'ugriz', and do a linear transformation on them, thus would definitely lose some information. 
+In order to keep a more complete data for each galaxy we used 'ugriz' files rather than RGB images as the input to our classifier. Figure~\ref{fig:ugriz} shows the gray-scale images of the \todo{u, g, r, i and z band photometry of a spiral galaxy}{is this the correct way to say it?} as well as the RGB image of the same galaxy. We can see that there is information on each band but the RGB image only uses 3 or 4 of them which would cause information loss.
+
+\begin{figure}[h]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[trim={0 4cm 0 4cm},clip]{Figures/ugriz_vs_rgb.png}
+	\caption{The 'ugriz' images and the RGB image of the same galaxy}
+	\label{fig:ugriz}
+\end{figure}
+
+Then we \todo{split}{explain further more about how we split the data} the data into three sets for training, validation and testing. The number of each class for each set is shown in Table~\ref{tab:dataset}.
+\begin{table}[]
+	\centering
+	\begin{tabular}{@{}ccccc@{}}
+		\toprule
+		& Training              & Validation            & Testing               & Total                 \\ \midrule
+		\multicolumn{1}{|c|}{Spiral}     & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\ \midrule
+		\multicolumn{1}{|c|}{Elliptical} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\  \bottomrule
+	\end{tabular}
+\caption{Numbers of data points in each class for training, validation and testing}
+\label{tab:dataset}
+\end{table}
