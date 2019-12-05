@@ -3,9 +3,9 @@
 \subsection{Motivation}
 A long time ago, a scientist was looking at galaxies far far away. 
 They noticed that different galaxies have different morphologies that can be split into two main categories: spiral and elliptical. 
-The differences between them are fairly obvious when looking at images: spiral galaxies are disk shaped and have curved arms extending out from the centre, while elliptical galaxies are shaped like a three dimensional blob that is brighter in the middle. 
+The differences between them are fairly obvious when looking at images: spiral galaxies are disk shaped and have curved arms extending out from the centre, while elliptical galaxies are shaped like a three dimensional blob that is brighter in the middle (Figure \ref{fig:tuningfork}). 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 	\centering
 	\captionsetup{justification=centering,width=.8\linewidth}
 	\includegraphics[scale=0.7]{Figures/TuningFork.jpg}
@@ -23,7 +23,7 @@ Classifying galaxies based on their morphology has an enormous impact on researc
 That last point may sound skeptical, however consider the event of galaxy collisions.
 When two galaxies of any type collide, they eventually form a large elliptical galaxy. 
 Elliptical galaxies are much more common near the centre of galaxy clusters for this reason, and can be many times larger than their spiral counterparts.
-This is why scientists see more spiral galaxies as we look deeper into space - because it is analogous to looking further back in time where less spiral galaxies had time to collide and form ellipticals. 
+This is why scientists see more spiral galaxies as we look deeper into space - because it is analogous to looking further back in time where fewer spiral galaxies had time to collide and form ellipticals. 
 
 
 Humans can easily distinguish between the two morphologies by just looking at the galaxy images. 
@@ -34,7 +34,7 @@ The Sloan Digital Sky Survey is one of the newer collection surveys that is star
 This is where data science comes in!
 We first performed Logistic regression on the data, specifically on the average flux value of each image channel. 
 This was to see if there was any obvious relationship between the colour of the galaxy and its morphology. 
-We then trained a neural network to classify galaxy images into spiral or elliptical.
+We then trained a neural network to classify galaxy images as spiral or elliptical.
 If successful, a convolutional neural network (CNN) should be able to classify galaxies much faster than humans, with comparable accuracy.
 
 
