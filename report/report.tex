@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 
+
 \makeatletter
 \DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
 \makeatother
@@ -48,8 +49,6 @@ Email: kkulik2@uwo.ca, dsharm55@uwo.ca, lwang739@uwo.ca
 \input{abstract}
 \end{abstract}
 
-\begin{IEEEkeywords}Data science\end{IEEEkeywords}
-
 \input{introduction} 
 \input{data}
 \input{method}
@@ -58,5 +57,9 @@ Email: kkulik2@uwo.ca, dsharm55@uwo.ca, lwang739@uwo.ca
 
 \bibliographystyle{IEEEtran}
 \bibliography{reference}
+
+\begin{appendices}
+	\input{appendix}
+\end{appendices}
 
 \end{document}
