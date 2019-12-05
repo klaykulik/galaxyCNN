@@ -3,7 +3,7 @@
 \subsection{Logistic Regression}
 Logistic Regression is a Machine Learning algorithm which is used for the classification problems, it is a predictive analysis algorithm that based on the concept of probability. Here we use it as a baseline model to see if the problem needs a much more complex model such as CNN or a simple model can generate relatively good result. 
 
-For the input data, we took the mean of each channel for each galaxy. Then we fit a logistic regression on five features. We randomly selected 4500 galaxies of each type for training, and then testing the fitted model on 1000 random data points. The confusion matrix for the testing data can be found in Section~\ref{sec:res}.
+For the input data of each galaxy, we took the mean intensity of each `ugriz' channel. A logistic regression was fit to the five channel averages, to determine if there was a correlation between galaxy colour and morphology. We randomly selected 4500 galaxies of each type for training, and then testing the fitted model on 1000 random data points. The confusion matrix for the testing data can be found in Section~\ref{sec:res}.
 
 \subsection{Deep Learning Model - CNN}
 

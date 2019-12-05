@@ -1,3 +1,12 @@
 \section{Discussion}
 \label{sec:dis}
-The CNN model was trained and validated on the data that was crowd sourced, so it is fair to say that any bias and errors were also learned by the model. The model itself is not 100\% accurate so we can also speculate that the model is ideal, i.e., the missing accuracy was the human error. Furthermore, it would be interesting to compare the same model with image data(RGB) extracted for the same galaxies instead of 'ugriz' channels. From the results it is clear that we can employ a CNN model in practice. This particular model was only trained on a subset of the data available in GZ, with more training data and vizualization of the weights at every layer we should be able to get a clear idea on what the model learned.
+The CNN model was trained and validated on the Galaxy Zoo data that had crowdsourced classifications, so it is possible that any bias and errors in the input data were also learned by the model. 
+That being said, we could also propose that errors in the crowdsourced data are shown as misclassifications in our model, and our model is perfectly classifying the data, however unlikely that may seem. 
+The only way to definitively find out the true accuracy that our model has when classifying galaxy morphology would be to manually classify all of the galaxies and compare the results. 
+It would be interesting to compare the same model with image data(RGB) extracted for the same galaxies instead of `ugriz' channels. 
+With more training data and visualization of the weights at every layer we should be able to get a clear idea on what the model learned.
+
+From the results it is clear that we can employ a CNN model in practice, even though this model was only trained on a subset of the data available in GZ.
+One particular example of an application of our CNN would be with the SDSS database itself. Sloan does not classify the galaxy images it produces due to the sheer volume of data, but a CNN could easily allow for classification as soon as galaxies are observed. 
+
+
