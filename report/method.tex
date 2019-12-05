@@ -1,12 +1,13 @@
 \section{Method}
 \label{sec:method}
 \subsection{Logistic Regression}
+\label{sec:log}
 Logistic Regression is a Machine Learning algorithm which is used for the classification problems, it is a predictive analysis algorithm that based on the concept of probability. Here we use it as a baseline model to see if the problem needs a much more complex model such as CNN or a simple model can generate relatively good result. 
 
 For the input data, we took the mean of each channel for each galaxy. Then we fit a logistic regression on five features. We randomly selected 4500 galaxies of each type for training, and then testing the fitted model on 1000 random data points. The confusion matrix for the testing data can be found in Section~\ref{sec:res}.
 
 \subsection{Deep Learning Model - CNN}
-
+\label{sec:cnn}
 \begin{figure}[h]
 	\centering
 	\captionsetup{justification=centering}
@@ -18,6 +19,6 @@ For the input data, we took the mean of each channel for each galaxy. Then we fi
 Deep Learning has achieved significant results and a huge improvement in visual detection and recognition with a lot of categories. Raw data images are used by deep learning as input without the need of expert knowledge for optimization of segmentation parameter or feature design. Using neural network for the morphological galaxy classification is also a very common approach, there exist work such as ~\cite{banerji2010galaxy} and~\cite{khan2019deep}. 
 We used open source software stacks for our project. The deep learning APIs used are Keras and TensorFlow~\cite{tensorflow}. 
 
-The proposed architecture of the deep network for the morphological classification is illustrated in detail in Figure~\ref{fig:cnnarch}. It consists of 15 layers, made up of 5 main layers for features extraction, followed by two principle fully connected layers for classification. The first layer is the input layer. Every main layer is further made of one convolutional layer with the Rectified Linear Unit(ReLU) as the nonlinear activation function and a max pooling layer at the end for subsampling. The first fully connected layer has 128 neurons with ReLU activation function, while the last fully connected layer has one neuron and uses a sigmoid to obtain class memberships. Visualizing the feature extraction and classification layers in the proposed deep neural architecture will give a better understating. In the main layers, features are extracted and the patterns identified become more complex as we go deeper into the network. The code fragment for the model can be found in Appendix~\ref{sec:appa} as well as the \href{https://github.com/klaykulik/datascience}{GitHub repository}.
+The proposed architecture of the deep network for the morphological classification is illustrated in detail in Figure~\ref{fig:cnnarch}. It consists of 15 layers, made up of 5 main layers for features extraction, followed by two principle fully connected layers for classification. The first layer is the input layer. Every main layer is further made of one convolutional layer with the Rectified Linear Unit(ReLU) as the nonlinear activation function and a max pooling layer at the end for subsampling. The first fully connected layer has 128 neurons with ReLU activation function, while the last fully connected layer has one neuron and uses a sigmoid to obtain class memberships. Visualizing the feature extraction and classification layers in the proposed deep neural architecture will give a better understating. In the main layers, features are extracted and the patterns identified become more complex as we go deeper into the network. The code fragment for the model can be found in Appendix~\ref{sec:appa} and the full work can be found in the \href{https://github.com/klaykulik/datascience}{GitHub repository}.
 
 CNNs are generally used for image classification but they are also very useful for finding patterns in any data that can benefit from filters. Using a 5 channel raw input is not typical when employing CNNs but since the image data (RGB) for the galaxy is a subset of the wavelength range of the 5 channels, a CNN is very well suited for this classification task. This becomes more apparent with the results (accuracy) of the model. We used all 38127 data points we obtained after the pre-processing, $70\%$ is used for training and $30\%$ is used for validation. The results can be found in Section~\ref{sec:res}.
