@@ -1,2 +1,7 @@
-In this project, we discuss the problem of galaxy morphological classification, where the input data contain five bands (u, g, r, i and z) instead of the typical three channel (RGB) images. We considered the binary case where a galaxy is either spiral or elliptical. The data we used came from the Sloan Digital Sky Survey and the Galaxy Zoo project.
-We first performed Logistic Regression as a baseline, which gave a testing accuracy of $58.9\%$. Then we built a Convolutional Neural Network with five convolution layers that gave an accuracy of $98.5\%$ with around 18000 training data for each type. Obviously CNN gave a much more promising result comparing to Logistic regression for this problem, but further improvements should also be considered, for example, fine tuning the CNN. Also the accuracy of the `true' labels should also be further discussed since this part of the data is collected by crowdsourcing.
+In this project, the problem of galaxy morphological classification into two main categories is discussed, where the input data contain five bands (u, g, r, i and z) instead of the typical three channel (RGB) images. 
+The data used came from the Sloan Digital Sky Survey and the Galaxy Zoo project.
+Logistic Regression was first performed as a baseline on on 10000 randomly sampled galaxies, which gave a testing accuracy of $58\%$. 
+A Convolutional Neural Network with five convolution layers was then built, and it classified with an accuracy of $98.5\%$ using roughly 18000 training data of each type. 
+Logistic Regression and the CNN are compared, with discussion on further improvements such as fine tuning the CNN.
+Assumptions that the crowdsourced data are correctly classified are reviewed, and applications of a functional CNN are given. The full report and all supplemental scripts are publicly available on \href{https://github.com/klaykulik/galaxyCNN}{GitHub}
+
